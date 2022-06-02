@@ -2,7 +2,7 @@
 variable "resource_name" {
   description = "Desired name for the provisioned resources"
   type        = string
-  default     = "Dependency-Test"
+  default     = "Dependency"
 }
 
 variable "service_environment" {

@@ -72,7 +72,7 @@ func TestApplyMultiRegion_AzureEndpoint(t *testing.T) {
 
 	// Define variables
 	serviceLocation := "UK South"
-	resourceLocations := []string{"UK South"}
+	resourceLocations := []string{"UK South", "North Central US"}
 	endpointType := "Azure_Endpoint"
 
 	// Enable retryable error

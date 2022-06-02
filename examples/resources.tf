@@ -1,9 +1,10 @@
 module "public_ip" {
-  source              = "./dependencies"
-  for_each            = toset(var.resource_locations)
-  resource_location   = each.value
-  service_deployment  = var.service_deployment
-  service_environment = var.service_environment
+  source                         = "./dependencies"
+  for_each                       = toset(var.resource_locations)
+  service_deployment             = var.service_deployment
+  service_environment            = var.service_environment
+  resource_location              = each.value
+  resource_location_zone_support = lookup(var.platform_location_az, each.value, null) > 1 ? true : false
 }
 
 module "traffic_manager" {

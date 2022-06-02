@@ -42,3 +42,15 @@ variable "resource_traffic_manager_endpoint_type" {
   type        = string
   default     = "Azure_Endpoint"
 }
+
+variable "platform_location_az" {
+  description = "Number of availability zones in the location"
+  type        = map(string)
+  default = {
+    "UK South"         = 3
+    "UK West"          = 0
+    "North Europe"     = 3
+    "West Europe"      = 3
+    "North Central US" = 0
+  }
+}

@@ -37,3 +37,8 @@ variable "zones" {
   type        = list(string)
   default     = ["1", "2", "3"]
 }
+
+variable "resource_location_zone_support" {
+  description = "Whether the current location supports zones"
+  type        = bool
+}

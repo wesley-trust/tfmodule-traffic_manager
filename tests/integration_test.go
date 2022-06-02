@@ -10,7 +10,8 @@ import (
 )
 
 func TestApplySingleRegion_AzureEndpoint(t *testing.T) {
-	t.Parallel()
+	// Not running in parallel due to a current naming limitation causing a conflict
+	//t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
 	rootFolder := "../"
@@ -54,7 +55,8 @@ func TestApplySingleRegion_AzureEndpoint(t *testing.T) {
 }
 
 func TestApplyMultiRegion_AzureEndpoint(t *testing.T) {
-	t.Parallel()
+	// Not running in parallel due to a current naming limitation causing a conflict
+	//t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
 	rootFolder := "../"

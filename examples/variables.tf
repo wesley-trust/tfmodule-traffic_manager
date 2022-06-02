@@ -37,11 +37,6 @@ variable "resource_locations" {
   default     = ["UK South", "North Central US"]
 }
 
-variable "resource_traffic_manager_endpoints" {
-  description = "Traffic manager endpoint public ips"
-  type        = any
-}
-
 variable "resource_traffic_manager_endpoint_type" {
   description = "Type of Traffic Manager Endpoint"
   type        = string

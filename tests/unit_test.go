@@ -9,7 +9,7 @@ import (
 	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-func TestPlanSingleRegion_AzureEndpoint(t *testing.T) {
+func TestPlanSingleRegion(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -23,13 +23,12 @@ func TestPlanSingleRegion_AzureEndpoint(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "SingleRegion-AzureEndpoint" // Underscores are not allowed in TM names
+	testREF := "SingleRegion" // Underscores are not allowed in TM names
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables
 	serviceLocation := "UK South"
 	resourceLocations := []string{"UK South"}
-	endpointType := "Azure_Endpoint"
 
 	// Enable retryable error
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
@@ -42,7 +41,6 @@ func TestPlanSingleRegion_AzureEndpoint(t *testing.T) {
 			"service_deployment":                     serviceDeployment,
 			"service_location":                       serviceLocation,
 			"resource_locations":                     resourceLocations,
-			"resource_traffic_manager_endpoint_type": endpointType,
 		},
 	})
 
@@ -50,7 +48,7 @@ func TestPlanSingleRegion_AzureEndpoint(t *testing.T) {
 	terraform.InitAndPlan(t, terraformOptions)
 }
 
-func TestPlanMultiRegion_AzureEndpoint(t *testing.T) {
+func TestPlanMultiRegion(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -64,13 +62,12 @@ func TestPlanMultiRegion_AzureEndpoint(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "MultiRegion-AzureEndpoint" // Underscores are not allowed in TM names
+	testREF := "MultiRegion" // Underscores are not allowed in TM names
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables
 	serviceLocation := "UK South"
 	resourceLocations := []string{"UK South", "North Central US"}
-	endpointType := "Azure_Endpoint"
 
 	// Enable retryable error
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
@@ -83,7 +80,6 @@ func TestPlanMultiRegion_AzureEndpoint(t *testing.T) {
 			"service_deployment":                     serviceDeployment,
 			"service_location":                       serviceLocation,
 			"resource_locations":                     resourceLocations,
-			"resource_traffic_manager_endpoint_type": endpointType,
 		},
 	})
 

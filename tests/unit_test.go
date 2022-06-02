@@ -23,7 +23,7 @@ func TestPlanSingleRegion_AzureEndpoint(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "SingleRegion_AzureEndpoint"
+	testREF := "SingleRegion-AzureEndpoint" // Underscores are not allowed in TM names
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables
@@ -64,7 +64,7 @@ func TestPlanMultiRegion_AzureEndpoint(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "MultiRegion_AzureEndpoint"
+	testREF := "MultiRegion-AzureEndpoint" // Underscores are not allowed in TM names
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables

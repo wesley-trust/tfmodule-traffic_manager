@@ -10,7 +10,7 @@ import (
 )
 
 func TestApplySingleRegion(t *testing.T) {
-	// Not running in parallel due to a current naming limitation causing a conflict
+	// Not running in parallel due to a current naming limitation for the public IP causing a conflict
 	//t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -53,7 +53,7 @@ func TestApplySingleRegion(t *testing.T) {
 }
 
 func TestApplyMultiRegion(t *testing.T) {
-	// Not running in parallel due to a current naming limitation causing a conflict
+	// Not running in parallel due to a current naming limitation for the public IP causing a conflict
 	//t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
